@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\RatingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -190,11 +191,20 @@
     <Compile Include="Migrations\201503091223217_Razzie.Designer.cs">
       <DependentUpon>201503091223217_Razzie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503091452454_Razz.cs" />
+    <Compile Include="Migrations\201503091452454_Razz.Designer.cs">
+      <DependentUpon>201503091452454_Razz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503091507530_Ratings1.cs" />
+    <Compile Include="Migrations\201503091507530_Ratings1.Designer.cs">
+      <DependentUpon>201503091507530_Ratings1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\ratings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -618,6 +628,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Ratings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -644,6 +655,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503091223217_Razzie.resx">
       <DependentUpon>201503091223217_Razzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091452454_Razz.resx">
+      <DependentUpon>201503091452454_Razz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091507530_Ratings1.resx">
+      <DependentUpon>201503091507530_Ratings1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
