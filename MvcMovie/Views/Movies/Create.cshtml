@@ -1,16 +1,17 @@
-﻿@model MvcMovie.Models.Movie
-
+﻿@using Microsoft.AspNet.Identity;
+@model MvcMovie.Models.Movie
+@{var CustomFormGroup = new MvcMovie.Models.rating();
+  CustomFormGroup.MovieTitle = movie.Title;
+  CustomFormGroup.User = User.Identity.GetUserId();}
 @{
     ViewBag.Title = "Create";
+    ViewBag.Rate = 0;
 }
-
 <h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Movie</h4>
         <hr />
@@ -54,7 +55,6 @@
                 @Html.ValidationMessageFor(model => model.Rating)
             </div>
         </div>
-
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -62,10 +62,21 @@
         </div>
     </div>
 }
+<form method="post" action="Movies/rate">
+    {
+            <input type="number" min="1" max="5" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</div>)
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

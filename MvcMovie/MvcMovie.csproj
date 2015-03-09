@@ -199,6 +199,14 @@
     <Compile Include="Migrations\201503091507530_Ratings1.Designer.cs">
       <DependentUpon>201503091507530_Ratings1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503091607087_user.cs" />
+    <Compile Include="Migrations\201503091607087_user.Designer.cs">
+      <DependentUpon>201503091607087_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503091813032_viewbagRate.cs" />
+    <Compile Include="Migrations\201503091813032_viewbagRate.Designer.cs">
+      <DependentUpon>201503091813032_viewbagRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -661,6 +669,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503091507530_Ratings1.resx">
       <DependentUpon>201503091507530_Ratings1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091607087_user.resx">
+      <DependentUpon>201503091607087_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503091813032_viewbagRate.resx">
+      <DependentUpon>201503091813032_viewbagRate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

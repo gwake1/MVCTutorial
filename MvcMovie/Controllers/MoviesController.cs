@@ -7,12 +7,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MvcMovie.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MvcMovie.Controllers
 {
     public class MoviesController : Controller
     {
         private MovieDBContext db = new MovieDBContext();
+        private RatingContext ratedb = new RatingContext();
 
         // GET: Movies
         public ActionResult Index(string movieGenre, string searchString)
@@ -72,11 +74,18 @@ namespace MvcMovie.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Movies.Add(movie);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    rating Brandon = new rating();
+                    Brandon.MovieTitle = movie.Title;
+                    Brandon.Rating = ViewBag.Rate;
+                    Brandon.User = User.Identity.GetUserId();
+                    ratedb.Ratings.Add(Brandon);
+                    db.Movies.Add(movie);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
             return View(movie);
         }
 
